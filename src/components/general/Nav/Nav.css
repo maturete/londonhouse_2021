@@ -1,0 +1,39 @@
+nav {
+  background: var(--color-principal);
+  padding: 2rem 0;
+}
+
+nav .container {
+  display: flex;
+  flex-direction: inherit;
+  align-items: center;
+  position: relative;
+}
+
+nav h1 {
+  
+}
+
+nav ul {
+  float:right;
+  right:-80px;
+  position: absolute;
+  padding: inherit;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 2rem;
+}
+
+
+nav ul li a {
+  color: var(--blanco);
+  font-size: 1.5rem;
+  padding: 50px 20px;
+}
+
+nav ul li a:hover {
+  background-color: var(--text);
+  transition: opacity 0.2s;
+}
