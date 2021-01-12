@@ -1,7 +1,11 @@
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 import './ProductDetail.css';
+import {Store} from '../../store';
+import {useHistory} from 'react-router-dom';
 
 const ProductDetail = ({item}) => {
+    const history = useHistory();
+    const [data, setData] = useContext(Store);
     const [qty, setQty] = useState(1);	
 
     const handleClickResta = () => {	
@@ -10,9 +14,16 @@ const ProductDetail = ({item}) => {
         }	
     }	
 
-    const onAdd = () => {	
-        alert(`Agregaste ${qty} productos al carrito`);	
+    const onAdd = () => {
+        setData({
+            ...data, 
+            cantidad: data.cantidad + qty,
+            items: [...data.items, item],
+        });
+        history.push('/cart');	
     }
+    
+    console.log(data);
 
     return (
         <article className="product">
@@ -26,13 +37,7 @@ const ProductDetail = ({item}) => {
                     !!item.description && <p className="description">{item.description}</p>
                 }
                 <p className="price">${item.price}</p>
-                <h2>TALLE</h2>
-                <select>
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                </select>
+
                 <div className="qty">	
                     <button 	
                         disabled={qty === 1 ? 'disabled' : null } 	
@@ -44,7 +49,7 @@ const ProductDetail = ({item}) => {
                     <button onClick={() => setQty(qty + 1)}>+</button>	
                 </div>
 
-                <button className="btn" onClick={onAdd}>Añadir</button>
+                <button className="btn" onClick={onAdd}>Agregar al carrito</button>
             </div>
         </article>
     )
