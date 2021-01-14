@@ -1,0 +1,32 @@
+.text {
+    text-align: center;
+    padding: 2rem 0;
+
+}
+.tableTitle{
+    display: inline-block;
+    padding: 1rem 2rem;
+}
+.ClassTable {
+    padding: 2rem 0;
+    text-align: center;
+
+}
+
+.ClassImg {
+    display: inline-block;
+    padding: 1rem 2rem;
+
+}
+
+.ClassTitle {
+    display: inline-block;
+    padding: 1rem 2rem;
+
+}
+
+.ClassPrice {
+    display: inline-block;
+    padding: 1rem 2rem;
+
+}

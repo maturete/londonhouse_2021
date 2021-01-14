@@ -2,8 +2,9 @@ import './Nav.css';
 import LogoTipo from '../../../assets/logo.png';
 import NavItem from '../NavItem/NavItem';
 import NavCart from '../NavCart/NavCart';
+import {Link} from 'react-router-dom';
 
-function Nav({titulo, action}) {
+function Nav({action}) {
     const menuItems = [
         {
             texto: 'Trajes',
@@ -22,7 +23,6 @@ function Nav({titulo, action}) {
             ruta: '/category/contacto',
         },
     ]
-    const productCant = 0;
 
     return (
         <nav>
@@ -32,12 +32,10 @@ function Nav({titulo, action}) {
                 {
                     menuItems.map((seccion, index) => <NavItem key={index} text={seccion.texto} url={seccion.ruta} />)   
                 }
-                {
-                    !productCant && <NavCart action={action} productCant={productCant} />
-                }
+                <NavCart action={action} />
             </ul>
                 
-                
+        
             </div>
         </nav>
     )
