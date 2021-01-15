@@ -30,3 +30,22 @@
     padding: 1rem 2rem;
 
 }
+
+.btn {
+    text-align: center;
+    display: inline-block;
+    border: none;
+    padding: 1rem;
+    outline: none;
+    cursor: pointer;
+    background: var(--color-principal);
+    color: var(--blanco);
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    transition: background 0.5s;
+  }
+  
+.btn:hover {
+    background: var(--color-secundario);
+    color: var(--text);
+  }

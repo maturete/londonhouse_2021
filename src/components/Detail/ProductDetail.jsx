@@ -18,9 +18,10 @@ const ProductDetail = ({item}) => {
         setData({
             ...data, 
             cantidad: data.cantidad + qty,
-            items: [...data.items, item],
+            items: [...data.items, {item: item, cantidad: qty}],
+            totalAPagar: data.totalAPagar + (item.price * qty)
         });
-        history.push('/cart');	
+        history.push('/cart');
     }
     
     console.log(data);
@@ -28,7 +29,7 @@ const ProductDetail = ({item}) => {
     return (
         <article className="product">
             <div className="foto">
-            <img src={item.img}/>
+                <img src={`/products/${item.img}`} alt=""/>
             </div>
 
             <div className="info">
